@@ -1,5 +1,7 @@
 import streamlit as st
 import numpy as np
+from utils import *
+
 
 
 # Set page config
@@ -27,12 +29,12 @@ if uploaded_img is not None:
     st.sidebar.write("Original Image:")
     st.sidebar.image(img, width=350, channels="BGR")
 
-    # Checkbox to preserve aspect
-    preserve_aspect = st.sidebar.checkbox("Preserve Aspect Ratio", value=False, key=None, on_change=None, disabled=False, label_visibility="visible")
+    # # Checkbox to preserve aspect
+    # preserve_aspect = st.sidebar.checkbox("Preserve Aspect Ratio", value=False, key=None, on_change=None, disabled=False, label_visibility="visible")
 
-    # Get current image information
-    pixel_height, pixel_width = img.shape[:2]
-    aspect_ratio = pixel_width / pixel_height
+    # # Get current image information
+    # pixel_height, pixel_width = img.shape[:2]
+    # aspect_ratio = pixel_width / pixel_height
     
-    new_height = pixel_height
-    new_width = pixel_width
+    # new_height = pixel_height
+    # new_width = pixel_width
