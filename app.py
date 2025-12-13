@@ -1,22 +1,12 @@
-import streamlit as st
 from pages.utils import *
 
-# Set page config
-apptitle = 'OpenCv Demo'
-st.set_page_config(page_title=apptitle, page_icon=":camera:")
+about_page = st.Page("pages/about.py", title='About')
+edge_page = st.Page("pages/edge_detect.py", title="Edge Detection")
+morph_page = st.Page("pages/morphological.py", title="Morphological Operations")
 
-# App Title and Give User Instructions
-st.title('OpenCV Demo')
-st.markdown("""
- Select a demo from the left sidebar to see some example OpenCV projects.
-""")
-pages = st.navigation(
-    [
-        st.Page("app.py", title="Home"),
-        st.Page("pages/edge_detect.py", title="Edge Detection"),
-        st.Page("pages/morphological.py", title="Morphological Operations"),
-    ]
-)
+pages = st.navigation([about_page, edge_page, morph_page])
+
 pages.run()
-# st.sidebar.success("Select a demo above.")
+
+
 

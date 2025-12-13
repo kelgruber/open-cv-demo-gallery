@@ -1,19 +1,16 @@
-from utils import *
+from pages.utils import *
+
+# Set page config
+st.set_page_config(page_title="Edge Detection Demo", page_icon=":camera:")
+
+st.title('Edge Detection Demo')
+st.markdown("""
+ Choose an Edge Detection algorithm from the sidebar.
+""")
 
 # Get Image from the user
 file_types = ["jpg", "jpeg", "png", "tif"]
 uploaded_img = st.sidebar.file_uploader("Upload an Image", type=file_types, accept_multiple_files=False, key=None, on_change=None, label_visibility="visible")
-
-pages = st.navigation(
-    [
-        st.Page("app.py", title="Home"),
-        st.Page("pages/edge_detect.py", title="Edge Detection"),
-        st.Page("pages/morphological.py", title="Morphological Operations"),
-    ]
-)
-pages.run()
-# st.sidebar.success("Select a demo above.")
-
 
 if uploaded_img is not None:
     # Upload and display the image
