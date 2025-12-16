@@ -8,6 +8,10 @@ st.markdown("""
  Choose an Edge Detection algorithm from the sidebar.
 """)
 
+# Choose Edge Detection Algorithm
+option_list = ["Canny Edge Detection", "Laplacian Operator", "Sobel Operator", "Roberts Cross Operator", "Prewitt Operator"]
+detect_method = st.sidebar.selectbox('Edge Detection Algorithms', option_list)
+
 # Get Image from the user
 file_types = ["jpg", "jpeg", "png", "tif"]
 uploaded_img = st.sidebar.file_uploader("Upload an Image", type=file_types, accept_multiple_files=False, key=None, on_change=None, label_visibility="visible")
